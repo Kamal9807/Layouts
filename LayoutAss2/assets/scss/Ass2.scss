@@ -1,0 +1,447 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  .navbarBackground {
+    background-color: #fdc800;
+    .navbar-brand {
+      font-size: medium;
+      .align-text-top {
+        max-width: 50%;
+      }
+    }
+    .navbarLogo {
+      flex-direction: row;
+    }
+  }
+  //navbar2
+  .navbarbg {
+    background-color: #f0f4f9;
+    .logo {
+      max-width: 80%;
+    }
+    .nav-link {
+      color: #002147;
+      font-weight: bold;
+    }
+    .signBut {
+      color: #002147;
+      background-color: #fdc800;
+    }
+    .searchButton {
+      padding: 4px 6px;
+      background-color: #00b2b2;
+      .searchBtn {
+        background-image: url("../images/Component%20102.png");
+        background-repeat: no-repeat;
+        padding: 10px;
+      }
+    }
+    .btn-outline-secondary {
+      background-color: white;
+    }
+  }
+
+  //top-section
+  .top-section {
+    padding: 33px;
+    padding-bottom: 5rem;
+    background-color: #f0f4f9;
+    .topSection-row {
+      margin: auto;
+      .topSection {
+        margin: auto;
+        .topH5 {
+          color: #002147;
+          font-weight: bold;
+        }
+        .topH1 {
+          color: #002147;
+          font-family: Georgia;
+          font-weight: bold;
+        }
+        .topBut1 {
+          background-color: white;
+        }
+        .topBut1:hover {
+          background-color: #fdc800;
+          border: none;
+        }
+        .topBut2 {
+          background-color: white;
+        }
+        .topBut2:hover {
+          background-color: #fdc800;
+          border: none;
+        }
+      }
+    }
+  }
+
+  //clock-part
+  .sucess-section {
+    background-color: #002147;
+    border-radius: 10px;
+    margin-bottom: 5rem;
+    padding: 20px;
+    .successImg-div {
+      padding-left: 10px;
+    }
+    .successPara-div {
+      margin: auto;
+      color: white;
+      em {
+        color: #fdc800;
+      }
+    }
+    .successClock-div {
+      margin: auto;
+      color: white;
+      .clock {
+        font-weight: bold;
+        font-size: xxx-large;
+        font-family: Inter;
+      }
+    }
+  }
+
+  //card-img-top
+  .courses-section {
+    margin-bottom: 5rem;
+    .cardsheading {
+      text-align: center;
+      color: #002147;
+      font-weight: bold;
+      font-family: Georgia;
+    }
+    .cardCol {
+      margin-left: 14px;
+      margin-top: 60px;
+      .card-main {
+        width: 17rem;
+        margin: auto;
+        .card-img-top1 {
+          background-repeat: no-repeat;
+          padding-top: 103px;
+          padding-bottom: 0px;
+          padding-left: 11px;
+          padding-right: 206px;
+          max-width: fit-content;
+          max-width: 100%;
+          background-image: url("../images/ux-designer-web-designer.png");
+          background-size: contain;
+        }
+        .cardH5 {
+          color: #002147;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* number of lines to show */
+          -webkit-box-orient: vertical;
+        }
+        .cardPara {
+          color: #757575;
+          font-size: small;
+        }
+        .card-img-top2 {
+          @extend .card-img-top1;
+          background-image: url("../images/why-ux-design-is-important-840x400.png");
+        }
+        .card-img-top3 {
+          @extend .card-img-top1;
+          background-image: url("../images/difference-between-ux-ui-ux-ui-min-6cd3a171087987d31ecdb67ad67c0ab8136242f7b4e476a0e509017aa8bbc755.png");
+        }
+        .card-img-top4 {
+          @extend .card-img-top1;
+          background-image: url("../images/shutterstock_703336915.png");
+        }
+        .card-img-top5 {
+          @extend .card-img-top1;
+          background-image: url("../images/ux-design-pillar-page-ux-overview.png");
+        }
+        .card-img-top6 {
+          @extend .card-img-top1;
+          background-image: url("../images/what-does-a-ux-designer-do-header-image.png");
+        }
+        .card-img-top7 {
+          @extend .card-img-top1;
+          background-image: url("../images/what-does-a-ux-ui-designer-do_860.png");
+        }
+        .card-img-top8 {
+          @extend .card-img-top1;
+          background-image: url("../images/iStock_000081361619_Full.png");
+        }
+        .card-img-top9 {
+          @extend .card-img-top1;
+          background-image: url("../images/UX_design_principles_jpg_-EtzLc2m.png");
+        }
+      }
+    }
+
+    .cardCol:hover {
+      transform: scale(1.06);
+      transition: transform 150ms cubic-bezier(0, 0, 0.38, 0.9);
+      transition-property: transform;
+      transition-duration: 150ms;
+      transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
+      transition-delay: 0s;
+    }
+  }
+
+  //black Img
+  .BlackImg-Section {
+    margin-bottom: 5rem;
+    .kimmie {
+      text-align: center;
+      margin: 0;
+    }
+    .Junior {
+      text-align: center;
+    }
+    .blkImgH1 {
+      font-size: 3.5rem;
+      font-family: Georgia;
+      font-weight: bold;
+      color: #002147;
+    }
+    .blkpara {
+      font-size: medium;
+      font-family: Inter;
+      color: #212529;
+    }
+    .blkH6 {
+      color: #002147;
+    }
+    .blkpara1 {
+      color: #002147;
+      font-size: small;
+    }
+    .blkpara2 {
+      color: #757575;
+      font-size: smaller;
+    }
+  }
+
+  //fourimages
+  .fourimages {
+    padding: 55px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f0f4f9;
+    background-image: url("../images/map.png");
+    .fourimagesRow {
+      margin: auto;
+      .imgcol {
+        text-align: center;
+        .imgh1 {
+          color: #002147;
+        }
+        .imgpara {
+          color: #00b2b2;
+          font-size: small;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  //girl image
+  .girlImgSection {
+    margin: auto;
+    margin-top: 6rem;
+    .girl-img {
+      align-items: center;
+      max-width: 60%;
+      margin-left: 80px;
+    }
+  }
+  .Subscribe {
+    margin: auto;
+    .SubNow {
+      color: #fdc800;
+    }
+    .subNowH1 {
+      color: #002147;
+    }
+    .girl-form {
+      .girl-label {
+        position: relative;
+        .sub-button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          border: none;
+          background: #fdc800;
+          color: #002147;
+        }
+      }
+    }
+  }
+  //3 cards section
+  .card-section {
+    margin-top: 4rem;
+    background-color: #f0f4f9;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    .OurPlans {
+      color: #fdc800;
+      font-weight: bold;
+    }
+    .CardH1 {
+      color: #002147;
+      font-family: Georgia;
+      font-weight: bold;
+    }
+    .btnCol {
+      .yearlyBtn {
+        background-color: white;
+        font-size: small;
+        float: right;
+        border-radius: 0;
+        border: none;
+      }
+      .yearlyBtn:hover {
+        background-color: #00b2b2;
+      }
+      .monthlyBtn {
+        background-color: white;
+        font-size: small;
+        float: right;
+        border-radius: 0;
+        border: none;
+      }
+      .monthlyBtn:hover {
+        background-color: #00b2b2;
+      }
+    }
+    .ThreeCard {
+      width: 18rem;
+      margin: auto;
+    }
+    .cardheader {
+      background-color: #033977;
+      margin-left: 77px;
+      margin-right: 86px;
+      text-align: center;
+      padding: 5px;
+      border-radius: 0;
+      font-weight: bolder;
+    }
+    .card-title {
+      color: #002147;
+    }
+    .cardtext {
+      font-size: small;
+    }
+    .cardUl {
+      list-style: none;
+      .li-para {
+        color: #002147;
+        line-height: 35px;
+      }
+      li::before {
+        content: "✓";
+        color: green;
+      }
+    }
+    .ButtonDiv {
+      text-align: center;
+      .cardButton {
+        background-color: #002147;
+        color: white;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+    }
+  }
+  .cardButton:hover {
+    background-color: #fdc800;
+  }
+  //footer section
+  .footer {
+    background-color: #002147;
+    padding-bottom: 0;
+    .footer-space {
+      padding-top: 2rem;
+      .footerUl {
+        list-style: none;
+        line-height: 2rem;
+      }
+    }
+    //copy-right
+    .copyright {
+      background-color: #fdc800;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      padding-top: 12px;
+      padding-bottom: 1px;
+      .copy-right-para {
+        padding-left: 8px;
+        color: #002147;
+      }
+    }
+  }
+
+  //media query
+  @media only screen and (min-width: 320px) and (max-width: 425px) {
+    //navbar 1
+    .navbarBackground {
+      background-color: #fdc800;
+      .navbar-brand {
+        font-size: small;
+      }
+    }
+    //top-section
+    .Analytic-img {
+      margin-top: 35px;
+    }
+    //success -section
+    .sucess-section {
+      .successImg-div {
+        padding-left: 54px;
+      }
+      .successPara-div {
+        text-align: center;
+      }
+      .successClock-div {
+        .clock {
+          font-size: larger;
+          text-align: center;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 570px) and (max-width: 750px) {
+    //clock-section
+    .sucess-section {
+      .successImg-div {
+        padding-left: 54px;
+      }
+      .successPara-div {
+        text-align: center;
+      }
+      .successClock-div {
+        .clock {
+          text-align: center;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 760px) and (max-width: 1040px) {
+    //clock section
+    .sucess-section {
+      .successImg-div {
+        padding-left: 54px;
+        display: none;
+      }
+      .successPara-div {
+        text-align: center;
+      }
+      .successClock-div {
+        .clock {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
