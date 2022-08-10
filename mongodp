@@ -1,0 +1,62 @@
+
+//create Database
+use  Kamal    --create database
+db                --display the created database
+show dbs          --display the database
+db.Kamal.insert({"websitename":"www.hhhhhh.com"})  --insert datas
+show dbs          --display the database
+
+
+//insertion operation:
+syntax- db.collection.insert() 
+
+show collections         --display the created collection
+db.kamal.insert
+     ({"websitename":"hhhhhh.com",
+       "details" : "learnt mongodb basics",
+       "author" : "kamal"
+      }) 
+
+db.kamal.insert
+     ({"websitename":"jjjjjj.com",
+       "details" : "next row inserted",
+       "articlecount":"40",
+       "author" : "jln"
+      })
+      
+db.kamal.insert 
+     ({ "schoolname": "aaaaa",
+       "rollno": 121,
+       "address": "yyyy"
+       })
+
+//find query
+db.kamal.find()
+
+//select pretty query
+db.kamal.find().pretty()
+
+//and operation
+syntax- db.collection.find({key1:value1, key2:value2}).pretty() 
+> db.kamal.find({"author":"jln"}).pretty()
+> db.kamal.find({"author":"jln","articlecount":"50"}).pretty()
+
+//or operation
+syntax-
+db.mycol.find(
+   {
+      $or: [
+         {key1: value1}, {key2:value2}
+      ]
+   }
+).pretty()
+
+> db.kamal.find(
+                   {
+                      $or:
+                         [
+                           {"author":"jln"},
+                           {"articlecount":"50"}
+                         ]
+                     }
+             ).pretty()
