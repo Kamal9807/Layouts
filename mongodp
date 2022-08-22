@@ -1,0 +1,261 @@
+11.08.2022
+--------------
+
+//create Database
+use  Kamal    --create database
+db                --display the created database
+show dbs          --display the database
+db.Kamal.insert({"websitename":"www.hhhhhh.com"})  --insert datas
+show dbs          --display the database
+
+//insertion operation:
+syntax- db.collection.insert() 
+
+show collections         --display the created collection
+db.kamal.insert
+     ({"websitename":"hhhhhh.com",
+       "details" : "learnt mongodb basics",
+       "author" : "kamal"
+      }) 
+
+db.kamal.insert
+     ({"websitename":"jjjjjj.com",
+       "details" : "next row inserted",
+       "articlecount":"40",
+       "author" : "jln"
+      })
+      
+db.kamal.insert 
+     ({ "schoolname": "aaaaa",
+       "rollno": 121,
+       "address": "yyyy"
+       })
+
+//find query
+db.kamal.find()
+
+//select pretty query
+db.kamal.find().pretty()
+
+//and operation
+syntax- db.collection.find({key1:value1, key2:value2}).pretty() 
+> db.kamal.find({"author":"jln"}).pretty()
+> db.kamal.find({"author":"jln","articlecount":"50"}).pretty()
+
+//or operation
+syntax-
+db.mycol.find(
+   {
+      $or: [
+         {key1: value1}, {key2:value2}
+      ]
+   }
+).pretty()
+
+> db.kamal.find(
+                   {
+                      $or:
+                         [
+                           {"author":"jln"},
+                           {"articlecount":"50"}
+                         ]
+                     }
+             ).pretty()
+             
+-----------------------------------------------------------------------------------------------------------------------          
+18.08.2022
+-----------
+         
+>use Person
+switched to db Person
+> db
+Person
+
+> db.find
+Person.find
+
+//insert
+> db.Person.insert({"name": "kamal","id": 121,"address":"zzzz"})
+WriteResult({ "nInserted" : 1 })
+> show collections
+Person
+> db.Person.find()
+{ "_id" : ObjectId("62fdc6eff6d8e748161eb10d"), "name" : "kamal", "id" : 121, "address" : "zzzz" }
+> db.Person.insert({"name": "Aravind", "id": 122, "address":"yyyy","pincode": 632503})
+WriteResult({ "nInserted" : 1 })
+> db.Person.find()
+{ "_id" : ObjectId("62fdc6eff6d8e748161eb10d"), "name" : "kamal", "id" : 121, "address" : "zzzz" }
+{ "_id" : ObjectId("62fdc887f6d8e748161eb10e"), "name" : "Aravind", "id" : 122, "address" : "yyyy", "pincode" : 632503 }
+> db.Person.insert({"name": "guru","id": 123, "address": "xxxx", "Education": ["BCA", "MCA"]})
+WriteResult({ "nInserted" : 1 })
+> db.Person.find()
+{ "_id" : ObjectId("62fdc6eff6d8e748161eb10d"), "name" : "kamal", "id" : 121, "address" : "zzzz" }
+{ "_id" : ObjectId("62fdc887f6d8e748161eb10e"), "name" : "Aravind", "id" : 122, "address" : "yyyy", "pincode" : 632503 }
+{ "_id" : ObjectId("62fdcabbf6d8e748161eb10f"), "name" : "guru", "id" : 123, "address" : "xxxx", "Education" : [ "BCA", "MCA" ] }
+
+//pretty method
+> db.Person.find().pretty()
+{
+	"_id" : ObjectId("62fdc6eff6d8e748161eb10d"),
+	"name" : "kamal",
+	"id" : 121,
+	"address" : "zzzz"
+}
+{
+	"_id" : ObjectId("62fdc887f6d8e748161eb10e"),
+	"name" : "Aravind",
+	"id" : 122,
+	"address" : "yyyy",
+	"pincode" : 632503
+}
+{
+	"_id" : ObjectId("62fdcabbf6d8e748161eb10f"),
+	"name" : "guru",
+	"id" : 123,
+	"address" : "xxxx",
+	"Education" : [
+		"BCA",
+		"MCA"
+	]
+}
+
+//find with specific data
+> db.Person.find({"id": 123})
+{ "_id" : ObjectId("62fdcabbf6d8e748161eb10f"), "name" : "guru", "id" : 123, "address" : "xxxx", "Education" : [ "BCA", "MCA" ] }
+> db.Person.find({"name":"kamal"})
+{ "_id" : ObjectId("62fdc6eff6d8e748161eb10d"), "name" : "kamal", "id" : 121, "address" : "zzzz" }
+
+//And operator
+> db.Person.find({$and: [{name:"guru"},{id:123}]}).pretty()
+{
+	"_id" : ObjectId("62fdcabbf6d8e748161eb10f"),
+	"name" : "guru",
+	"id" : 123,
+	"address" : "xxxx",
+	"Education" : [
+		"BCA",
+		"MCA"
+	]
+}
+
+//Remove operator
+> db.Person.remove({name: "kamal"})
+WriteResult({ "nRemoved" : 1 })
+> db.Person.find().pretty()
+{
+	"_id" : ObjectId("62fdc887f6d8e748161eb10e"),
+	"name" : "Aravind",
+	"id" : 122,
+	"address" : "yyyy",
+	"pincode" : 632503
+}
+{
+	"_id" : ObjectId("62fdcabbf6d8e748161eb10f"),
+	"name" : "guru",
+	"id" : 123,
+	"address" : "xxxx",
+	"Education" : [
+		"BCA",
+		"MCA"
+	]
+}
+
+//delete operator
+> db.Person.deleteOne({ name:"guru"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.Person.find().pretty()
+{
+	"_id" : ObjectId("62fdc887f6d8e748161eb10e"),
+	"name" : "Aravind",
+	"id" : 122,
+	"address" : "yyyy",
+	"pincode" : 632503
+}
+
+//remove a record using id
+> db.person.remove({_id:ObjectId("630314a2386e78fa51d61390")})
+WriteResult({ "nRemoved" : 1 })
+
+
+//update 
+> use Employee
+switched to db Employee
+> db.Employee.insert({"name": "kamal","id": 121,"address":"zzzz"})
+WriteResult({ "nInserted" : 1 })
+> db.Employee.update({"name":"kamal"},{$set:{"name":"Kamalnath"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Employee.update({"address":"zzzz"},{$set:{"address":"yyyy"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Employee.find()
+{ "_id" : ObjectId("62fdfdabd19d9ad1c0f3b712"), "name" : "Kamalnath", "id" : 121, "address" : "yyyy" }
+
+> db.salary.find()
+{ "_id" : ObjectId("630319a4386e78fa51d61391"), "total" : 100000 }
+{ "_id" : ObjectId("630319a4386e78fa51d61392"), "total" : 200000 }
+> db.salary.update({"total":100000},{$set:{"education": "MCA"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.salary.update({"total":200000},{$set:{"education": "MBA"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.salary.find()
+{ "_id" : ObjectId("630319a4386e78fa51d61391"), "total" : 100000, "education" : "MCA" }
+{ "_id" : ObjectId("630319a4386e78fa51d61392"), "total" : 200000, "education" : "MBA" }
+
+
+//when we want specific data
+> db.person3.find({"name": {$in: ['kamal', 'rahul']}})
+{ "_id" : ObjectId("62fe5f501ec92c7fd892649c"), "name" : "kamal", "rollno" : 121, "address" : "xxx" }
+{ "_id" : ObjectId("62fe5f7d1ec92c7fd892649e"), "name" : "rahul", "rollno" : 123, "address" : "zzz" }
+> db.person3.find({"name": {$nin: ['kamal', 'rahul']}})
+{ "_id" : ObjectId("62fe5f681ec92c7fd892649d"), "name" : "jagan", "rollno" : 122, "address" : "yyy" }
+
+//equal operator
+> db.person3.find({"name": {$eq: 'rahul'}})
+{ "_id" : ObjectId("62fe5f7d1ec92c7fd892649e"), "name" : "rahul", "rollno" : 123, "address" : "zzz" }
+> db.person3.find({"rollno": {$eq: 121}})
+{ "_id" : ObjectId("62fe5f501ec92c7fd892649c"), "name" : "kamal", "rollno" : 121, "address" : "xxx" }
+
+
+//export & import database
+kamalnath@tsqa-l015:~/Documents/mongodb$ mongodump
+---it dump(export) all the database in the shell
+kamalnath@tsqa-l015:~/Documents/mongodb$ mongodump --db person2
+---it dump(export) a particular database like person2
+
+//import
+kamalnath@tsqa-l015:~/Documents/mongodb$ mongorestore --db person2 dump/person2
+---it restore the person2 database while we drop person2 database and again want to restore.
+
+
+//or and operator
+> db.person.find({ $and: [{ $or:[{"department": "civil"},{"department": "mech"}]}]})
+{ "_id" : ObjectId("630314a2386e78fa51d6138f"), "name" : "vinoth", "department" : "civil" }
+{ "_id" : ObjectId("630314a2386e78fa51d61390"), "name" : "kamal", "department" : "mech" }
+
+> db.person.find({ $and: [{ $or:[{"department": "civil"},{"department": "it"}]}]})
+{ "_id" : ObjectId("630314a2386e78fa51d6138f"), "name" : "vinoth", "department" : "civil" }
+
+//join operation
+> db.person.aggregate([
+  {$lookup:{
+      from:'salary',
+      localField: '_id',
+      foreignField: 's_id',
+      as: 'test'
+    }
+  }
+]).pretty()
+{
+	"_id" : ObjectId("63031a8e386e78fa51d61393"),
+	"name" : "kishore",
+	"department" : "civil",
+	"s_id" : ObjectId("630319a4386e78fa51d61391"),
+	"test" : [ ]
+}
+{
+	"_id" : ObjectId("63031a8e386e78fa51d61394"),
+	"name" : "kamal",
+	"department" : "mech",
+	"s_id" : ObjectId("630319a4386e78fa51d61391"),
+	"test" : [ ]
+}
+
